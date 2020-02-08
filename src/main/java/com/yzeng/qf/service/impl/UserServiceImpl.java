@@ -1,7 +1,8 @@
-package com.yzeng.qf.service.user;
+package com.yzeng.qf.service.impl;
 
 import com.yzeng.qf.dao.UserDao;
 import com.yzeng.qf.pojo.model.UserDomain;
+import com.yzeng.qf.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

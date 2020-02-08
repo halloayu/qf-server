@@ -1,4 +1,4 @@
-package com.yzeng.qf.service.user;
+package com.yzeng.qf.service;
 
 import com.yzeng.qf.pojo.model.UserDomain;
 import org.springframework.stereotype.Service;

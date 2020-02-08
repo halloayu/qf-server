@@ -1,7 +1,7 @@
 package com.yzeng.qf;
 
 import com.yzeng.qf.pojo.model.UserDomain;
-import com.yzeng.qf.service.user.UserServiceImpl;
+import com.yzeng.qf.service.impl.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

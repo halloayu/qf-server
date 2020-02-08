@@ -4,27 +4,49 @@ package com.yzeng.qf.pojo.model;
  * qf_user表实体类
  */
 public class UserDomain {
-    /** 主键编号 */
+    /**
+     * 主键编号
+     */
     private Integer user_id;
-    /** 用户名 */
+    /**
+     * 用户名
+     */
     private String username;
-    /** 密码 */
+    /**
+     * 密码
+     */
     private String password;
-    /** 昵称 */
+    /**
+     * 昵称
+     */
     private String nickname;
-    /** 性别 */
+    /**
+     * 性别
+     */
     private Integer gender;
-    /** 电话 */
+    /**
+     * 电话
+     */
     private String phone;
-    /** 邮件 */
+    /**
+     * 邮件
+     */
     private String email;
-    /** 会员级别 */
+    /**
+     * 会员级别
+     */
     private Integer level;
-    /** 用户角色 */
+    /**
+     * 用户角色
+     */
     private Integer role;
-    /** 账号创建时间 */
+    /**
+     * 账号创建时间
+     */
     private String create_time;
-    /** 账号状态 */
+    /**
+     * 账号状态
+     */
     private Integer status;
 
     public Integer getUser_id() {
@@ -113,5 +135,22 @@ public class UserDomain {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDomain{" +
+                "user_id=" + user_id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", gender=" + gender +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", level=" + level +
+                ", role=" + role +
+                ", create_time='" + create_time + '\'' +
+                ", status=" + status +
+                '}';
     }
 }

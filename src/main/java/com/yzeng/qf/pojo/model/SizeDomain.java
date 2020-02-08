@@ -115,4 +115,21 @@ public class SizeDomain {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "SizeDomain{" +
+                "size_id=" + size_id +
+                ", user_id=" + user_id +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", shoulder=" + shoulder +
+                ", chest=" + chest +
+                ", waist=" + waist +
+                ", hip=" + hip +
+                ", foot='" + foot + '\'' +
+                ", create_time='" + create_time + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }

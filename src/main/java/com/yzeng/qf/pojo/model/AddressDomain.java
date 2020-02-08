@@ -104,4 +104,20 @@ public class AddressDomain {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "AddressDomain{" +
+                "address_id=" + address_id +
+                ", user_id=" + user_id +
+                ", receiver_name='" + receiver_name + '\'' +
+                ", receiver_phone='" + receiver_phone + '\'' +
+                ", receiver_province='" + receiver_province + '\'' +
+                ", receiver_city='" + receiver_city + '\'' +
+                ", receiver_district='" + receiver_district + '\'' +
+                ", receiver_address='" + receiver_address + '\'' +
+                ", create_time='" + create_time + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }
