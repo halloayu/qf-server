@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-//    @Autowired
     private final UserDao userDao; // 通过构造器强制注入
 
     @Autowired

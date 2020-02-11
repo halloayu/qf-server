@@ -15,8 +15,7 @@ class QfServerApplicationTests {
 	@Test
 	void contextLoads() {
 		UserDomain user = userService.getUserInfoById(1);
-		System.out.println(user.getUsername());
-		System.out.println(user.getLevel());
+		System.out.println(user);
 	}
 
 }
