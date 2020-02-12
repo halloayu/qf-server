@@ -1,6 +1,7 @@
 package com.yzeng.qf.controller;
 
 
+import com.yzeng.qf.constant.WebConstant;
 import com.yzeng.qf.pojo.dto.UserDto;
 import com.yzeng.qf.util.APIResponse;
 import org.springframework.stereotype.Controller;
@@ -38,15 +39,8 @@ public class LoginController {
         user.setUser_id(1);
         user.setUsername("admin");
         user.setNickname("黑小虎");
-        return APIResponse.success("登录成功", user);
-    }
-
-    @GetMapping("/admin/toIndex")
-    public String toIndex(@RequestParam("username") String username,
-                             Model model) {
-        System.out.println("username" + username);
-        model.addAttribute("username", username);
-        return "redirect:/admin/index.html";
+        session.setAttribute("username", username);
+        return APIResponse.success(WebConstant.Auth.LOGIN_SUCCESS, user);
     }
 
 }

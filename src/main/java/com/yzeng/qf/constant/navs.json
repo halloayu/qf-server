@@ -1,0 +1,85 @@
+[{
+  "title": "控制台",
+  "href": "/admin/console.html",
+  "fontFamily": "ok-icon",
+  "icon": "&#xe654;",
+  "spread": true,
+  "isCheck": true
+},
+  {
+    "title": "用户管理",
+    "href": "",
+    "icon": "&#xe62d;",
+    "spread": false,
+    "children": [{
+      "title": "普通用户",
+      "href": "/admin/user.html",
+      "icon": "&#xe62e;",
+      "spread": false
+    },
+      {
+        "title": "管理员",
+        "href": "/admin/administrator.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      }
+    ]
+  },
+  {
+    "title": "商家管理",
+    "href": "",
+    "icon": "&#xe62d;",
+    "spread": false,
+    "children": [{
+      "title": "入驻商家",
+      "href": "/admin/supplier.html",
+      "icon": "&#xe62e;",
+      "spread": false
+    },
+      {
+        "title": "管理员",
+        "href": "/admin/administrator.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      }
+    ]
+  },
+  {
+    "title": "订单管理",
+    "href": "",
+    "icon": "&#xe62d;",
+    "spread": false,
+    "children": [{
+      "title": "入驻商家",
+      "href": "/admin/supplier.html",
+      "icon": "&#xe62e;",
+      "spread": false
+    },
+      {
+        "title": "管理员",
+        "href": "/admin/administrator.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      }
+    ]
+  },
+  {
+    "title": "任务单管理",
+    "href": "",
+    "icon": "&#xe62d;",
+    "spread": false,
+    "children": [{
+      "title": "入驻商家",
+      "href": "/admin/supplier.html",
+      "icon": "&#xe62e;",
+      "spread": false
+    },
+      {
+        "title": "管理员",
+        "href": "/admin/administrator.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      }
+    ]
+  }
+]

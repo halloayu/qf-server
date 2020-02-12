@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>奇服商城后台管理-登录</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
     <!--    <meta name="_csrf" th:content="${_csrf.token}"/>-->
     <!--    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>-->
     <link rel="shortcut icon" th:href="@{/admin/image/favicon.ico}" type="image/x-icon"/>
@@ -75,7 +75,7 @@
             okUtils.ajax("/admin/toLogin", "post", data.field, true).done(function (response) {
                 okLayer.greenTickMsg(response.msg, function () {
                     let username = response.data.username;
-                    window.location = "/admin/toIndex?username="+username;
+                    window.location = "/admin/index.html";
                 })
             }).fail(function (error) {
                 console.log(error)
