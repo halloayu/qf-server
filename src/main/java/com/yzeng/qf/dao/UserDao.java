@@ -36,10 +36,9 @@ public interface UserDao {
     UserDomain getUserInfoById(@Param("user_id") Integer user_id);
 
     /**
-     * 根据用户名和密码获取用户信息
+     * 根据用户名获取用户信息
      * @param username 用户名
-     * @param password 密码
      * @return 一条记录
      */
-    UserDomain getUserInfoByCond(@Param("username") String username, @Param("password") String password);
+    UserDomain getUserInfoByName(@Param("username") String username);
 }

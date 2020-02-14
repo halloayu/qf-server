@@ -1,11 +1,10 @@
 package com.yzeng.qf.controller;
 
 
-import com.yzeng.qf.constant.WebConstant;
+import com.yzeng.qf.constant.MessageConstant;
 import com.yzeng.qf.pojo.dto.UserDto;
 import com.yzeng.qf.util.APIResponse;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -31,16 +30,28 @@ public class LoginController {
 //        return null;
 //    }
 
-    @PostMapping("/admin/toLogin")
-    @ResponseBody
-    public APIResponse login(@RequestParam("username") String username,
-                        @RequestParam("password") String password, HttpSession session) {
-        UserDto user = new UserDto();
-        user.setUser_id(1);
-        user.setUsername("admin");
-        user.setNickname("黑小虎");
-        session.setAttribute("username", username);
-        return APIResponse.success(WebConstant.Auth.LOGIN_SUCCESS, user);
-    }
+//    @PostMapping("/admin/toLogin")
+//    @ResponseBody
+//    public APIResponse login(@RequestParam("username") String username,
+//                        @RequestParam("password") String password, HttpSession session) {
+//        UserDto user = new UserDto();
+//        user.setUser_id(1);
+//        user.setUsername("admin");
+//        user.setNickname("黑小虎");
+//        session.setAttribute("username", username);
+//        return APIResponse.success(MessageConstant.Auth.LOGIN_SUCCESS, user);
+//    }
+
+//    @GetMapping("/admin/toLogin")
+//    @ResponseBody
+//    public APIResponse login2(@RequestParam("username") String username,
+//                             @RequestParam("password") String password, HttpSession session) {
+//        UserDto user = new UserDto();
+//        user.setUser_id(1);
+//        user.setUsername("admin");
+//        user.setNickname("黑小虎");
+//        session.setAttribute("username", username);
+//        return APIResponse.success(MessageConstant.Auth.LOGIN_SUCCESS, user);
+//    }
 
 }

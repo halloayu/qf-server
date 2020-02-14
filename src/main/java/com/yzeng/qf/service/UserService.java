@@ -34,8 +34,7 @@ public interface UserService {
     /**
      * 用户登录
      * @param username 用户名
-     * @param password 密码
      * @return 一条记录
      */
-    UserDomain login(String username, String password);
+    UserDomain getUserInfoByName(String username);
 }

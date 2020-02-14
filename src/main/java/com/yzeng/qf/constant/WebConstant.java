@@ -1,10 +1,23 @@
 package com.yzeng.qf.constant;
 
-public interface WebConstant {
-    // 用户
-    interface Auth {
-        static final String LOGIN_SUCCESS = "登录成功";
-        static final String LOGIN_USER_EMPTY = "用户名不存在";
-        static final String LOGIN_PASSWORD_ERROR = "密码错误,请重新尝试";
-    }
+import org.springframework.stereotype.Component;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Component
+public class WebConstant {
+    /**
+     * 网站配置
+     */
+    public static Map<String, String> initConfig = new HashMap<>();
+
+    /**
+     * session的key
+     */
+    public static final String LOGIN_SESSION_KEY = "loginUser";
+
+    public static final String USER_IN_COOKIE = "q_f_cookie";
+
+
 }

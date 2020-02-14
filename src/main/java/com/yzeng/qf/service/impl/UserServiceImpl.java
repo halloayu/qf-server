@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDomain login(String username, String password) {
-        return null;
+    public UserDomain getUserInfoByName(String username) {
+        return userDao.getUserInfoByName(username);
     }
 }

@@ -74,7 +74,6 @@
         form.on("submit(login)", function (data) {
             okUtils.ajax("/admin/toLogin", "post", data.field, true).done(function (response) {
                 okLayer.greenTickMsg(response.msg, function () {
-                    let username = response.data.username;
                     window.location = "/admin/index.html";
                 })
             }).fail(function (error) {

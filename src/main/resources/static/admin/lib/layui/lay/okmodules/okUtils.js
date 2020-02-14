@@ -52,13 +52,13 @@ layui.define(["layer"], function (exprots) {
                     }
                 },
                 success: function (data) {
-                    if (data.code == 0) {
+                    if (data.code === 1) {
                         // 业务正常
                         deferred.resolve(data)
                     } else {
                         // 业务异常
-                        layer.msg(data.msg, {icon: 7, time: 2000});
-                        deferred.reject("okUtils.ajax warn: " + data.msg);
+                        layer.msg("请确认您的身份是否为管理员", {icon: 2, time: 2000});
+                        deferred.reject("Identity warning～");
                     }
                 },
                 complete: function () {
@@ -66,10 +66,11 @@ layui.define(["layer"], function (exprots) {
                         layer.close(loadIndex);
                     }
                 },
-                error: function () {
+                error: function (data) {
+                    let res = JSON.parse(data.responseText); // 返回数据解析成json字符串
                     layer.close(loadIndex);
-                    layer.msg("服务器错误", {icon: 2, time: 2000});
-                    deferred.reject("okUtils.ajax error: 服务器错误");
+                    layer.msg(res.msg, {icon: 2, time: 2000});
+                    deferred.reject("登录出现异常");
                 }
             });
             return deferred.promise();

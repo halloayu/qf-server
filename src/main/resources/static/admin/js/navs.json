@@ -81,5 +81,43 @@
         "spread": false
       }
     ]
+  },
+  {
+    "title": "图片管理",
+    "href": "",
+    "icon": "&#xe62d;",
+    "spread": false,
+    "children": [{
+      "title": "入驻商家",
+      "href": "/admin/supplier.html",
+      "icon": "&#xe62e;",
+      "spread": false
+    },
+      {
+        "title": "管理员",
+        "href": "/admin/administrator.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      }
+    ]
+  },
+  {
+    "title": "品牌管理",
+    "href": "",
+    "icon": "&#xe62d;",
+    "spread": false,
+    "children": [{
+      "title": "入驻商家",
+      "href": "/admin/supplier.html",
+      "icon": "&#xe62e;",
+      "spread": false
+    },
+      {
+        "title": "管理员",
+        "href": "/admin/administrator.html",
+        "icon": "&#xe62e;",
+        "spread": false
+      }
+    ]
   }
 ]

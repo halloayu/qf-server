@@ -51,13 +51,13 @@
          </li>
 
          <li class="no-line layui-nav-item">
-            <a href="javascript:" th:text="${username}">
+            <a href="javascript:" th:text="admin">
                <img th:src="@{/admin/image/portrait.jpg}" class="layui-nav-img">
 
             </a>
             <dl id="userInfo" class="layui-nav-child">
                <dd><a lay-id="u-1" href="javascript:" data-url="">xxx</a></dd>
-               <dd><a lay-id="u-2" href="javascript:" data-url="/templates/admin/administrator-info.html">基本资料</a></dd>
+               <dd><a lay-id="u-2" href="javascript:" data-url="/admin/administrator-info.html">基本资料</a></dd>
                <dd><a lay-id="u-3" href="javascript:" data-url="">安全设置</a></dd>
                <dd><a lay-id="u-4" href="javascript:" id="alertSkin">皮肤动画</a></dd>
                <dd>
@@ -121,7 +121,7 @@
 
          <div id="tabContent" class="layui-tab-content ok-tab-content">
             <div class="layui-tab-item layui-show">
-               <iframe src="/templates/admin/console.html" frameborder="0" scrolling="yes" width="100%"
+               <iframe src="/admin/console.html" frameborder="0" scrolling="yes" width="100%"
                        height="100%"></iframe>
             </div>
          </div>

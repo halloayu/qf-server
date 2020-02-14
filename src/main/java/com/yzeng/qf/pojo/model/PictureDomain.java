@@ -14,6 +14,10 @@ public class PictureDomain {
      */
     private String picture_description;
     /**
+     * 用户id
+     */
+    private Integer user_id;
+    /**
      * 商品id
      */
     private Integer product_id;
@@ -54,6 +58,14 @@ public class PictureDomain {
         this.picture_description = picture_description;
     }
 
+    public Integer getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
+    }
+
     public Integer getProduct_id() {
         return product_id;
     }
@@ -92,6 +104,7 @@ public class PictureDomain {
                 "picture_id=" + picture_id +
                 ", picture_url='" + picture_url + '\'' +
                 ", picture_description='" + picture_description + '\'' +
+                ", user_id=" + user_id +
                 ", product_id=" + product_id +
                 ", order_id=" + order_id +
                 ", create_time='" + create_time + '\'' +

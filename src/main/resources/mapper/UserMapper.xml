@@ -36,20 +36,12 @@
         user_id = #{user_id, jdbcType=INTEGER}
     </select>
 
-    <select id="getUserInfoByCond" resultType="com.yzeng.qf.pojo.model.UserDomain">
+    <select id="getUserInfoByName" resultType="com.yzeng.qf.pojo.model.UserDomain">
         SELECT
         <include refid="BASE_COLUMN"/>
         FROM
         <include refid="BASE_TABLE"/>
-        <where>
-            <if test="username != null">
-                AND username = #{username, jdbcType=VARCHAR}
-            </if>
-            <if test="password != null">
-                AND password = #{password, jdbcType=VARCHAR}
-            </if>
-        </where>
+        WHERE username = #{username, jdbcType=VARCHAR}
     </select>
-
 
 </mapper>
