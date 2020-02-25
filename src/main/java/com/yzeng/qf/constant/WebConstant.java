@@ -15,7 +15,7 @@ public class WebConstant {
     /**
      * session的key
      */
-    public static final String LOGIN_SESSION_KEY = "loginUser";
+    public static final String LOGIN_SESSION_KEY = "login_user";
 
     public static final String USER_IN_COOKIE = "q_f_cookie";
 

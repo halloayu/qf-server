@@ -1,0 +1,45 @@
+{
+  "code": 1,
+  "result": [
+    {
+      "product_id": 11,
+      "title": "推荐分类"
+    },
+    {
+      "product_id": 12,
+      "title": "热门设计"
+    },
+    {
+      "product_id": 13,
+      "title": "女装"
+    },
+    {
+      "product_id": 14,
+      "title": "男装"
+    },
+    {
+      "product_id": 15,
+      "title": "童装"
+    },
+    {
+      "product_id": 16,
+      "title": "西装"
+    },
+    {
+      "product_id": 17,
+      "title": "礼服"
+    },
+    {
+      "product_id": 18,
+      "title": "鞋包"
+    },
+    {
+      "product_id": 19,
+      "title": "居家内衣"
+    },
+    {
+      "product_id": 20,
+      "title": "饰品"
+    }
+  ]
+}

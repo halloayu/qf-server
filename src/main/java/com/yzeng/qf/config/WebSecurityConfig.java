@@ -38,6 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // login页面所有人可以访问
         http.authorizeRequests()
                 .antMatchers("/admin/login").permitAll()
+                .antMatchers("/admin/user").permitAll()
                 .antMatchers("/admin/index.html").hasRole("ADMIN")
                 .and()
 //                .sessionManagement().maximumSessions(1) // 限制登录人数
@@ -48,7 +49,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureHandler(myAuthenticationFailureHandler)
                 .and()
                 .formLogin()
-                .loginPage("/admin/login").loginProcessingUrl("/admin/toLogin");
+                .loginPage("/admin/login").loginProcessingUrl("/admin/toLogin")
+                .and()
+                .cors(); // 开启跨域
+
+        ;
         // 注销功能
 //        http.logout().logoutSuccessUrl("/admin/login").deleteCookies().invalidateHttpSession(true);
         //.defaultSuccessUrl("/admin/toLogin");
@@ -68,6 +73,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(myAuthenticationProvider);
-
     }
+
 }

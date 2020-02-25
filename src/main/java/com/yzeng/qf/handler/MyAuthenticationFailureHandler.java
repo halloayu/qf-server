@@ -1,6 +1,8 @@
 package com.yzeng.qf.handler;
 
+import com.alibaba.fastjson.JSON;
 import com.yzeng.qf.constant.MessageConstant;
+import com.yzeng.qf.util.APIResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
@@ -24,11 +26,11 @@ public class MyAuthenticationFailureHandler extends SimpleUrlAuthenticationFailu
         response.setStatus(401);
         response.setContentType("application/json;charset=UTF-8");
         if (message.equals(MessageConstant.Auth.LOGIN_USER_EMPTY)) { // 找不到用户
-            response.getWriter().append("{\"code\":0,\"msg\":\"" + MessageConstant.Auth.LOGIN_USER_EMPTY + "\"}");
+            response.getWriter().append(JSON.toJSONString(APIResponse.fail(MessageConstant.Auth.LOGIN_USER_EMPTY)));
         } else if (message.equals(MessageConstant.Auth.LOGIN_PASSWORD_ERROR)) { // 密码错误
-            response.getWriter().append("{\"code\":0,\"msg\":\"" + MessageConstant.Auth.LOGIN_PASSWORD_ERROR + "\"}");
+            response.getWriter().append(JSON.toJSONString(APIResponse.fail(MessageConstant.Auth.LOGIN_PASSWORD_ERROR)));
         } else { // 无效用户
-            response.getWriter().append("{\"code\":0,\"msg\":\"" + MessageConstant.Auth.LOGIN_USER_INVALID + "\"}");
+            response.getWriter().append(JSON.toJSONString(APIResponse.fail(MessageConstant.Auth.LOGIN_USER_INVALID)));
         }
     }
 }

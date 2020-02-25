@@ -55,6 +55,13 @@
 			<version>1.1.9</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.62</version>
+		</dependency>
+
 		<!--导入测试 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

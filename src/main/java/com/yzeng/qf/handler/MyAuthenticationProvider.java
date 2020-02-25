@@ -43,6 +43,8 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
         if (!user.getPassword().equals(password)) {
             throw new BadCredentialsException(MessageConstant.Auth.LOGIN_PASSWORD_ERROR);
         }
+        // 登录校验通过后
+
         // 根据角色授予权限
         String[] roles;
         if(user.getRole() == 1) // 1是管理员
@@ -52,8 +54,7 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
         else
             return null; // 没有角色授权失败
         Collection<GrantedAuthority> authorities = getAuthorities(roles);
-        return new UsernamePasswordAuthenticationToken(user, user.getPassword(),
-                authorities);
+        return new UsernamePasswordAuthenticationToken(user, user.getPassword(), authorities);
     }
 
     /**

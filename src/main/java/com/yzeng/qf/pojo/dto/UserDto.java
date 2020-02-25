@@ -14,9 +14,9 @@ public class UserDto {
      */
     private String username;
     /**
-     * 昵称
+     * token
      */
-    private String nickname;
+    private String token;
 
     public Integer getUser_id() {
         return user_id;
@@ -34,11 +34,20 @@ public class UserDto {
         this.username = username;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getToken() {
+        return token;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "user_id=" + user_id +
+                ", username='" + username + '\'' +
+                ", token='" + token + '\'' +
+                '}';
     }
 }

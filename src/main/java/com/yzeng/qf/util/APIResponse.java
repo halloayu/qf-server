@@ -5,9 +5,9 @@ package com.yzeng.qf.util;
  */
 public class APIResponse <T> {
 
-    private static final Integer CODE_SUCCESS = 0; // 成功的状态码
+    private static final Integer CODE_SUCCESS = 1; // 成功的状态码
 
-    private static final Integer CODE_FAIL = 1; // 失败的状态码
+    private static final Integer CODE_FAIL = 0; // 失败的状态码
 
     private Integer code; // 状态码
     private String msg; // 信息
@@ -37,6 +37,10 @@ public class APIResponse <T> {
 
     public static APIResponse success(String msg, Object data){
         return new APIResponse(CODE_SUCCESS, msg, data);
+    }
+
+    public static APIResponse success(Integer code, String msg, Object data){
+        return new APIResponse(code, msg, data);
     }
 
     public static APIResponse fail(String msg){

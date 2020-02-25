@@ -1,6 +1,5 @@
 package com.yzeng.qf.controller;
 
-
 import com.yzeng.qf.constant.UrlConstant;
 import com.yzeng.qf.pojo.model.UserDomain;
 import com.yzeng.qf.util.JsonUtil;
@@ -37,8 +36,7 @@ public class IndexController {
 
     /**
      * 请求左侧导航栏数据
-     * 为节约时间暂时构造一个json传给index.html
-     *
+     * 毕业设计，为节约时间暂时构造一个json传给index.html
      * @return json
      */
     @RequestMapping(value = UrlConstant.Admin.ADMIN_NAVIGATIONS)
@@ -46,7 +44,7 @@ public class IndexController {
     public String getNavigations() {
         String jsonNav = "";
         try {
-            jsonNav = JsonUtil.readJsonFile("src/main/resources/static/admin/js/navs.json");
+            jsonNav = JsonUtil.readJsonFile("src/main/resources/static/json/navs.json");
         } catch (IOException e) {
             e.printStackTrace();
         }

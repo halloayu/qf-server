@@ -72,6 +72,7 @@
          * 表单提交
          */
         form.on("submit(login)", function (data) {
+            console.log(data.field);
             okUtils.ajax("/admin/toLogin", "post", data.field, true).done(function (response) {
                 okLayer.greenTickMsg(response.msg, function () {
                     window.location = "/admin/index.html";
