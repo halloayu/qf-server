@@ -27,7 +27,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 放开对静态资源对拦截
-        web.ignoring().antMatchers("static/admin/**");
+        web.ignoring()
+                .antMatchers("static/admin/**")
+                .antMatchers("static/public/**")
+                .antMatchers("static/error/**");
     }
 
     @Override

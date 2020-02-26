@@ -4,11 +4,9 @@
     <sql id="BASE_TABLE">
         qf_users
     </sql>
-
     <sql id="BASE_COLUMN">
         user_id,username,password,nickname,gender,phone,email,level,role,create_time,status
     </sql>
-
 
     <update id="updateUserInfo" parameterType="com.yzeng.qf.pojo.model.UserDomain">
         UPDATE
