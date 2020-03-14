@@ -16,5 +16,8 @@ public interface UrlConstant {
     interface Api{
         public static final String GET_CATEGORY_LIST = "/api/getCategoryList";
         public static final String GET_CATEGORY_DATA = "/api/getCategoryData";
+        public static final String GET_MODEL_DATA = "/api/factory";
+        public static final String POST_MODEL_DATA = "/api/models";
+        public static final String CUR_MODEL_DATA = "/api/model";
     }
 }

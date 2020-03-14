@@ -1,7 +1,5 @@
 package com.yzeng.qf.pojo.model;
 
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
-
 public class ModelDomain {
     /**
      * 主键编号
@@ -15,6 +13,10 @@ public class ModelDomain {
      * 用户id
      */
     private Integer user_id;
+    /**
+     * 属于主页设计还是店铺设计
+     */
+    private String belong;
     /**
      * 模型评分 满分100
      */
@@ -35,6 +37,10 @@ public class ModelDomain {
      * 主题款式(风格)
      */
     private String main_style;
+    /**
+     * 上市时间
+     */
+    private String time_to_market;
     /**
      * 洗水工艺
      */
@@ -92,13 +98,9 @@ public class ModelDomain {
      */
     private String pocket;
     /**
-     * 颜色正面
+     * 颜色
      */
-    private String color_front;
-    /**
-     * 颜色背面
-     */
-    private String color_back;
+    private String color;
     /**
      * 左袖子颜色
      */
@@ -148,6 +150,14 @@ public class ModelDomain {
      */
     private String shell_fabric;
     /**
+     * 设计稿正面图
+     */
+    private String img_f;
+    /**
+     * 设计稿背面图
+     */
+    private String img_b;
+    /**
      * 签名
      */
     private String signature;
@@ -182,6 +192,14 @@ public class ModelDomain {
 
     public void setUser_id(Integer user_id) {
         this.user_id = user_id;
+    }
+
+    public String getBelong() {
+        return belong;
+    }
+
+    public void setBelong(String belong) {
+        this.belong = belong;
     }
 
     public Integer getScore() {
@@ -222,6 +240,14 @@ public class ModelDomain {
 
     public void setMain_style(String main_style) {
         this.main_style = main_style;
+    }
+
+    public String getTime_to_market() {
+        return time_to_market;
+    }
+
+    public void setTime_to_market(String time_to_market) {
+        this.time_to_market = time_to_market;
     }
 
     public String getWashing() {
@@ -336,20 +362,12 @@ public class ModelDomain {
         this.pocket = pocket;
     }
 
-    public String getColor_front() {
-        return color_front;
+    public String getColor() {
+        return color;
     }
 
-    public void setColor_front(String color_front) {
-        this.color_front = color_front;
-    }
-
-    public String getColor_back() {
-        return color_back;
-    }
-
-    public void setColor_back(String color_back) {
-        this.color_back = color_back;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getSleeve_left_color() {
@@ -448,6 +466,22 @@ public class ModelDomain {
         this.shell_fabric = shell_fabric;
     }
 
+    public String getImg_f() {
+        return img_f;
+    }
+
+    public void setImg_f(String img_f) {
+        this.img_f = img_f;
+    }
+
+    public String getImg_b() {
+        return img_b;
+    }
+
+    public void setImg_b(String img_b) {
+        this.img_b = img_b;
+    }
+
     public String getSignature() {
         return signature;
     }
@@ -478,11 +512,13 @@ public class ModelDomain {
                 "model_id=" + model_id +
                 ", model_name='" + model_name + '\'' +
                 ", user_id=" + user_id +
+                ", belong='" + belong + '\'' +
                 ", score=" + score +
                 ", category='" + category + '\'' +
                 ", image_front='" + image_front + '\'' +
                 ", image_back='" + image_back + '\'' +
                 ", main_style='" + main_style + '\'' +
+                ", time_to_market='" + time_to_market + '\'' +
                 ", washing='" + washing + '\'' +
                 ", material='" + material + '\'' +
                 ", printing_front='" + printing_front + '\'' +
@@ -497,8 +533,7 @@ public class ModelDomain {
                 ", placket='" + placket + '\'' +
                 ", front_pant='" + front_pant + '\'' +
                 ", pocket='" + pocket + '\'' +
-                ", color_front='" + color_front + '\'' +
-                ", color_back='" + color_back + '\'' +
+                ", color='" + color + '\'' +
                 ", sleeve_left_color='" + sleeve_left_color + '\'' +
                 ", sleeve_right_color='" + sleeve_right_color + '\'' +
                 ", trouser_left_color='" + trouser_left_color + '\'' +
@@ -511,6 +546,8 @@ public class ModelDomain {
                 ", waist_style='" + waist_style + '\'' +
                 ", trouser_hem='" + trouser_hem + '\'' +
                 ", shell_fabric='" + shell_fabric + '\'' +
+                ", img_f='" + img_f + '\'' +
+                ", img_b='" + img_b + '\'' +
                 ", signature='" + signature + '\'' +
                 ", create_time='" + create_time + '\'' +
                 ", status=" + status +

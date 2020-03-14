@@ -35,6 +35,10 @@ public class APIResponse <T> {
         return new APIResponse(CODE_SUCCESS);
     }
 
+    public static APIResponse success(String msg){
+        return new APIResponse(CODE_SUCCESS, msg);
+    }
+
     public static APIResponse success(String msg, Object data){
         return new APIResponse(CODE_SUCCESS, msg, data);
     }

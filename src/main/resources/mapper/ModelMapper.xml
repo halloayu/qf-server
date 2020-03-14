@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yzeng.qf.dao.ModelDao">
+    <sql id="BASE_TABLE">
+        qf_model
+    </sql>
+    <sql id="BASE_COLUMN">
+        model_id,model_name,user_id,belong,score,category,image_front,image_back,main_style,time_to_market,washing,material,printing_front,
+        printing_back,thickness,clothing_technology,collar_type,model_type,suitable,season,size,placket,front_pant,pocket,
+        color,sleeve_left_color,sleeve_right_color,trouser_left_color,trouser_right_color,filler,hem_style,cuff_style,sleeve,
+        outside_length,waist_style,trouser_hem,shell_fabric,img_f,img_b,signature,create_time,status
+    </sql>
+
+    <insert id="addModelByUserId" parameterType="com.yzeng.qf.pojo.model.ModelDomain">
+        INSERT INTO
+        <include refid="BASE_TABLE"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            model_id,model_name,user_id,belong,score,category,image_front,image_back,main_style,time_to_market,washing,material,printing_front,
+            printing_back,thickness,clothing_technology,collar_type,model_type,suitable,season,size,placket,front_pant,pocket,
+            color,sleeve_left_color,sleeve_right_color,trouser_left_color,trouser_right_color,filler,hem_style,cuff_style,sleeve,
+            outside_length,waist_style,trouser_hem,shell_fabric,img_f,img_b,signature,create_time,status
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{model_id, jdbcType=INTEGER}, #{model_name, jdbcType=VARCHAR},#{user_id, jdbcType=INTEGER}, #{belong, jdbcType=VARCHAR},
+            #{score, jdbcType=INTEGER}, #{category, jdbcType=VARCHAR}, #{image_front, jdbcType=VARCHAR},
+            #{image_back, jdbcType=VARCHAR}, #{main_style, jdbcType=VARCHAR}, #{time_to_market, jdbcType=VARCHAR},
+            #{washing ,jdbcType=VARCHAR}, #{material ,jdbcType=VARCHAR}, #{printing_front ,jdbcType=VARCHAR},
+            #{printing_back ,jdbcType=VARCHAR}, #{thickness ,jdbcType=VARCHAR},
+            #{clothing_technology ,jdbcType=VARCHAR},
+            #{collar_type ,jdbcType=VARCHAR}, #{model_type ,jdbcType=VARCHAR}, #{suitable ,jdbcType=VARCHAR},
+            #{season ,jdbcType=VARCHAR}, #{size ,jdbcType=VARCHAR}, #{placket ,jdbcType=VARCHAR},
+            #{front_pant ,jdbcType=VARCHAR}, #{pocket ,jdbcType=VARCHAR}, #{color ,jdbcType=VARCHAR},
+            #{sleeve_left_color ,jdbcType=VARCHAR},
+            #{sleeve_right_color ,jdbcType=VARCHAR},
+            #{trouser_left_color ,jdbcType=VARCHAR}, #{trouser_right_color ,jdbcType=VARCHAR},
+            #{filler ,jdbcType=VARCHAR},
+            #{hem_style ,jdbcType=VARCHAR}, #{cuff_style ,jdbcType=VARCHAR}, #{sleeve ,jdbcType=VARCHAR},
+            #{outside_length ,jdbcType=VARCHAR}, #{waist_style ,jdbcType=VARCHAR}, #{trouser_hem ,jdbcType=VARCHAR},
+            #{shell_fabric ,jdbcType=VARCHAR}, #{img_f ,jdbcType=VARCHAR}, #{img_b ,jdbcType=VARCHAR},
+            #{signature ,jdbcType=VARCHAR}, #{create_time ,jdbcType=VARCHAR}, #{status ,jdbcType=INTEGER},
+        </trim>
+    </insert>
+
+    <select id="queryModelByUserId" resultType="com.yzeng.qf.pojo.model.ModelDomain">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        WHERE
+        user_id = #{user_id, jdbcType=INTEGER} and status = 1
+    </select>
+
+    <select id="queryModelByModelId" resultType="com.yzeng.qf.pojo.model.ModelDomain">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        WHERE
+        model_id = #{model_id, jdbcType=INTEGER}
+    </select>
+
+</mapper>
