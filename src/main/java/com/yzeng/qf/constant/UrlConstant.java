@@ -19,5 +19,9 @@ public interface UrlConstant {
         public static final String GET_MODEL_DATA = "/api/factory";
         public static final String POST_MODEL_DATA = "/api/models";
         public static final String CUR_MODEL_DATA = "/api/model";
+        public static final String DELETE_MODEL = "/api/model/delete";
+        public static final String SAVE_TASK = "/api/task/save";
+        public static final String QUERY_TASK = "/api/task/query";
+        public static final String QUERY_SUPPLIER = "/api/supplier/query";
     }
 }

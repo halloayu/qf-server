@@ -39,7 +39,18 @@ public class ModelServiceImpl implements ModelService {
     }
 
     @Override
-    public ModelDomain queryModelByModelId(Integer model_id) {
-        return modelDao.queryModelByModelId(model_id);
+    public ModelDomain queryValidModels(Integer model_id) {
+        return modelDao.queryModelByModelId(model_id, 1);
     }
+
+    @Override
+    public void deleteByModelId(Integer model_id) {
+        modelDao.updateStatusByModelId(model_id, 0); // 状态为0无效
+    }
+
+    @Override
+    public void resurgenceByModelId(Integer model_id) {
+        modelDao.updateStatusByModelId(model_id, 1); // 状态为1有效
+    }
+
 }

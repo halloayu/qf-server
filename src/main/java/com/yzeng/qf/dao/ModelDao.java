@@ -29,5 +29,11 @@ public interface ModelDao {
      * @param model_id 设计稿ID
      * @return ModelDomain
      */
-    ModelDomain queryModelByModelId(@Param("model_id") Integer model_id);
+    ModelDomain queryModelByModelId(@Param("model_id") Integer model_id, @Param("status") Integer status);
+
+    /**
+     * 根据ID更新设计稿状态
+     * @param model_id 设计稿ID
+     */
+    void updateStatusByModelId(@Param("model_id") Integer model_id, @Param("status") Integer status);
 }

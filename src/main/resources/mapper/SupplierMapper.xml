@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yzeng.qf.dao.SupplierDao">
+    <sql id="BASE_TABLE">
+        qf_supplier
+    </sql>
+    <sql id="BASE_COLUMN">
+        supplier_id,supplier_code,supplier_name,supplier_type,supplier_contact,supplier_phone,bank_name,bank_account,
+        supplier_address,supplier_evaluation,month_sale,create_time,status
+    </sql>
+
+    <insert id="addSupplier" parameterType="com.yzeng.qf.pojo.model.SupplierDomain">
+        INSERT INTO
+        <include refid="BASE_TABLE"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            supplier_id,supplier_code,supplier_name,supplier_type,supplier_contact,supplier_phone,bank_name,bank_account,
+            supplier_address,supplier_evaluation,month_sale,create_time,status
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+
+        </trim>
+    </insert>
+
+    <select id="querySupplierById" resultType="com.yzeng.qf.pojo.model.SupplierDomain">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        WHERE
+        supplier_id = #{supplier_id, jdbcType=INTEGER} and status = #{status, jdbcType=INTEGER}
+    </select>
+
+</mapper>

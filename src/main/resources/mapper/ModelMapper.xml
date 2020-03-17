@@ -47,7 +47,7 @@
         FROM
         <include refid="BASE_TABLE"/>
         WHERE
-        user_id = #{user_id, jdbcType=INTEGER} and status = 1
+        user_id = #{user_id, jdbcType=INTEGER} and status = #{status, jdbcType=INTEGER}
     </select>
 
     <select id="queryModelByModelId" resultType="com.yzeng.qf.pojo.model.ModelDomain">
@@ -58,5 +58,13 @@
         WHERE
         model_id = #{model_id, jdbcType=INTEGER}
     </select>
+
+    <!-- 更新评论的状态 -->
+    <update id="updateStatusByModelId">
+        UPDATE
+        <include refid="BASE_TABLE"/>
+        SET status = #{status, jdbcType=INTEGER}
+        WHERE model_id = #{model_id, jdbcType=INTEGER}
+    </update>
 
 </mapper>

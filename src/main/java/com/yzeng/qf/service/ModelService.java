@@ -1,7 +1,6 @@
 package com.yzeng.qf.service;
 
 import com.yzeng.qf.pojo.model.ModelDomain;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,5 +26,17 @@ public interface ModelService {
      * @param model_id 设计稿ID
      * @return ModelDomain
      */
-    ModelDomain queryModelByModelId(Integer model_id);
+    ModelDomain queryValidModels(Integer model_id);
+
+    /**
+     * 根据ID删除设计稿
+     * @param model_id 设计稿ID
+     */
+    void deleteByModelId(Integer model_id);
+
+    /**
+     * 根据ID生效设计稿
+     * @param model_id 设计稿ID
+     */
+    void resurgenceByModelId(Integer model_id);
 }
