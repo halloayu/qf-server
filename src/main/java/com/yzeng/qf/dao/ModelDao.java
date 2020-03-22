@@ -22,7 +22,7 @@ public interface ModelDao {
      * @param user_id ID
      * @return list
      */
-    List<ModelDomain> queryModelByUserId(@Param("user_id") Integer user_id);
+    List<ModelDomain> queryModelByUserId(@Param("user_id") Integer user_id, @Param("status") Integer status);
 
     /**
      * 根据设计稿ID获取设计稿详细信息

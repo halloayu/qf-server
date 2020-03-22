@@ -35,7 +35,7 @@ public class ModelServiceImpl implements ModelService {
 
     @Override
     public List<ModelDomain> queryModelByUserId(Integer user_id) {
-        return modelDao.queryModelByUserId(user_id);
+        return modelDao.queryModelByUserId(user_id, 1);
     }
 
     @Override

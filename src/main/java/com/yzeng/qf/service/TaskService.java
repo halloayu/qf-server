@@ -34,4 +34,32 @@ public interface TaskService {
      */
     List<TaskDomain> queryInvalidTask(Integer user_id);
 
+    /**
+     * 根据任务单ID查询信息
+     * @param task_id 任务单ID
+     * @return TaskDomain
+     */
+    TaskDomain findTaskById(Integer task_id);
+
+
+    /**
+     * 更新任务单
+     */
+    void updateTaskById(TaskDomain task);
+
+    /**
+     * 删除任务单
+     */
+    void deleteTaskById(TaskDomain task);
+
+    /**
+     * 发布任务单
+     */
+    void releaseTaskById(TaskDomain task);
+
+    /**
+     * 撤回任务单
+     */
+    void withdrawTaskById(Integer task);
+
 }

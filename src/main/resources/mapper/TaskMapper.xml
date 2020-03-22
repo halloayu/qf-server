@@ -15,12 +15,36 @@
             task_id,user_id,model_id,supplier_id,size_id,expect_amount,delivery,score,supplement,create_time,status
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
-            #{task_id, jdbcType=INTEGER}, #{user_id, jdbcType=INTEGER},#{model_id, jdbcType=INTEGER}, #{supplier_id, jdbcType=INTEGER},
+            #{task_id, jdbcType=INTEGER}, #{user_id, jdbcType=INTEGER},#{model_id, jdbcType=INTEGER},
+            #{supplier_id, jdbcType=INTEGER},
             #{size_id, jdbcType=INTEGER}, #{expect_amount, jdbcType=DECIMAL}, #{delivery, jdbcType=VARCHAR},
-            #{score, jdbcType=VARCHAR}, #{supplement, jdbcType=VARCHAR}, #{create_time, jdbcType=VARCHAR},
+            #{score, jdbcType=INTEGER}, #{supplement, jdbcType=VARCHAR}, #{create_time, jdbcType=VARCHAR},
             #{status ,jdbcType=INTEGER}
         </trim>
     </insert>
+
+    <!-- 更新任务单状态 -->
+    <update id="updateTaskStatus">
+        UPDATE
+        <include refid="BASE_TABLE"/>
+        set status = #{status, jdbcType=INTEGER}
+        WHERE task_id = #{task_id, jdbcType=INTEGER}
+    </update>
+
+    <!-- 更新任务单 -->
+    <update id="updateTask">
+        UPDATE
+        <include refid="BASE_TABLE"/>
+        <set>
+            size_id = #{size_id, jdbcType=INTEGER},
+            expect_amount = #{expect_amount, jdbcType=DECIMAL},
+            delivery = #{delivery, jdbcType=VARCHAR},
+            score = #{score, jdbcType=INTEGER},
+            supplement = #{supplement, jdbcType=VARCHAR},
+            create_time = #{create_time, jdbcType=VARCHAR},
+        </set>
+        WHERE task_id = #{task_id, jdbcType=INTEGER}
+    </update>
 
     <select id="queryTask" resultType="com.yzeng.qf.pojo.model.TaskDomain">
         SELECT
@@ -29,6 +53,15 @@
         <include refid="BASE_TABLE"/>
         WHERE
         user_id = #{user_id, jdbcType=INTEGER} and status = #{status, jdbcType=INTEGER}
+    </select>
+
+    <select id="findTaskById" resultType="com.yzeng.qf.pojo.model.TaskDomain">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        WHERE
+        task_id = #{task_id, jdbcType=INTEGER}
     </select>
 
 </mapper>
