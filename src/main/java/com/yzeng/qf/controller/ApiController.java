@@ -8,7 +8,6 @@ import com.yzeng.qf.util.DateKit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import sun.security.acl.AllPermissionsImpl;
 
 import java.util.List;
 
@@ -20,6 +19,7 @@ public class ApiController {
     private final TaskService taskService;
     private final SupplierService supplierService;
     private final FeedbackService feedbackService;
+    private final ProductService productService;
 
     @Autowired
     public ApiController(
@@ -27,12 +27,14 @@ public class ApiController {
             ModelService modelService,
             TaskService taskService,
             SupplierService supplierService,
-            FeedbackService feedbackService) {
+            FeedbackService feedbackService,
+            ProductService productService) {
         this.pictureService = pictureService;
         this.modelService = modelService;
         this.taskService = taskService;
         this.supplierService = supplierService;
         this.feedbackService = feedbackService;
+        this.productService = productService;
     }
 
     @RequestMapping(value = UrlConstant.Api.GET_CATEGORY_DATA)
@@ -148,5 +150,30 @@ public class ApiController {
     public APIResponse cancelFeedback(@RequestParam("feedback_id") Integer feedback_id) {
         feedbackService.cancelFeedback(feedback_id);
         return APIResponse.success("此交易已放弃,请至过期查看");
+    }
+
+    @GetMapping(value = UrlConstant.Api.DELETE_FEEDBACK)
+    @ResponseBody
+    public APIResponse deleteFeedback(@RequestParam("feedback_id") Integer feedback_id) {
+        feedbackService.deleteFeedback(feedback_id);
+        return APIResponse.success("删除成功");
+    }
+
+    @GetMapping(value = UrlConstant.Api.SEARCH_PRODUCT)
+    @ResponseBody
+    public List<ProductDomain> searchProduct(@RequestParam("name") String name) {
+        return productService.searchProductByName(name);
+    }
+
+    @GetMapping(value = UrlConstant.Api.PRODUCT_DETAIL)
+    @ResponseBody
+    public ProductDomain productDetail(@RequestParam("product_id") Integer productId) {
+        return productService.getProduct(productId);
+    }
+
+    @GetMapping(value = UrlConstant.Api.PRODUCT_PICTURE)
+    @ResponseBody
+    public List<PictureDomain> productPicture(@RequestParam("product_id") Integer productId) {
+        return pictureService.getPictureByProductId(productId);
     }
 }

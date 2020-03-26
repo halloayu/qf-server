@@ -10,7 +10,7 @@ public class ProductDomain {
     /**
      * 商品编码
      */
-    private Integer product_code;
+    private String product_code;
     /**
      * 商品名称
      */
@@ -55,6 +55,10 @@ public class ProductDomain {
      * 主题款式(风格)
      */
     private String main_style;
+    /**
+     * logo
+     */
+    private String logo;
     /**
      * 洗水工艺
      */
@@ -164,11 +168,11 @@ public class ProductDomain {
         this.product_id = product_id;
     }
 
-    public Integer getProduct_code() {
+    public String getProduct_code() {
         return product_code;
     }
 
-    public void setProduct_code(Integer product_code) {
+    public void setProduct_code(String product_code) {
         this.product_code = product_code;
     }
 
@@ -258,6 +262,14 @@ public class ProductDomain {
 
     public void setMain_style(String main_style) {
         this.main_style = main_style;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
     public String getWashing() {
@@ -476,6 +488,7 @@ public class ProductDomain {
                 ", two_category=" + two_category +
                 ", three_category='" + three_category + '\'' +
                 ", main_style='" + main_style + '\'' +
+                ", logo='" + logo + '\'' +
                 ", washing='" + washing + '\'' +
                 ", material='" + material + '\'' +
                 ", printing='" + printing + '\'' +

@@ -3,7 +3,6 @@ package com.yzeng.qf.service;
 import com.yzeng.qf.pojo.model.SupplierDomain;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public interface SupplierService {

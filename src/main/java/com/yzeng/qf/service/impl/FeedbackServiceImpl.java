@@ -32,4 +32,9 @@ public class FeedbackServiceImpl implements FeedbackService {
     public void cancelFeedback(Integer feedback_id) {
         feedbackDao.updateFeedbackStatus(feedback_id, 3);
     }
+
+    @Override
+    public void deleteFeedback(Integer feedback_id) {
+        feedbackDao.updateFeedbackStatus(feedback_id, 0);
+    }
 }

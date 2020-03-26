@@ -32,6 +32,10 @@ public interface UrlConstant {
         String QUERY_VALID_FEEDBACK = "api/feedback/query/valid"; // 查看所有反馈单
         String QUERY_CANCEL_FEEDBACK = "api/feedback/query/cancel"; // 查看所有反馈单
         String CANCEL_FEEDBACK = "api/feedback/cancel"; // 撤销反馈单
+        String DELETE_FEEDBACK = "api/feedback/delete"; // 删除反馈单
+        String SEARCH_PRODUCT = "api/product/search"; // 搜索商品
+        String PRODUCT_DETAIL = "api/product/detail"; // 搜索商品
+        String PRODUCT_PICTURE = "api/product/picture"; // 搜索商品
 
     }
 }

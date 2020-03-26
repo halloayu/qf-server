@@ -26,4 +26,10 @@ public interface FeedbackService {
      * @param feedback_id 反馈单ID
      */
     void cancelFeedback(Integer feedback_id);
+
+    /**
+     * 删除反馈单
+     * @param feedback_id 反馈单ID
+     */
+    void deleteFeedback(Integer feedback_id);
 }
