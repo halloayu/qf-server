@@ -20,6 +20,7 @@ public class ApiController {
     private final SupplierService supplierService;
     private final FeedbackService feedbackService;
     private final ProductService productService;
+    private final UserService userService;
 
     @Autowired
     public ApiController(
@@ -28,13 +29,15 @@ public class ApiController {
             TaskService taskService,
             SupplierService supplierService,
             FeedbackService feedbackService,
-            ProductService productService) {
+            ProductService productService,
+            UserService userService) {
         this.pictureService = pictureService;
         this.modelService = modelService;
         this.taskService = taskService;
         this.supplierService = supplierService;
         this.feedbackService = feedbackService;
         this.productService = productService;
+        this.userService = userService;
     }
 
     @RequestMapping(value = UrlConstant.Api.GET_CATEGORY_DATA)
@@ -176,4 +179,25 @@ public class ApiController {
     public List<PictureDomain> productPicture(@RequestParam("product_id") Integer productId) {
         return pictureService.getPictureByProductId(productId);
     }
+
+    @GetMapping(value = UrlConstant.Api.USER_CHECK)
+    @ResponseBody
+    public APIResponse checkUsername(@RequestParam("username") String username) {
+        List<UserDomain> list = userService.queryUsers(username);
+        if(list.size() > 0)
+            return APIResponse.fail("该用户名已存在");
+        else
+            return APIResponse.success("有效用户名");
+    }
+    @PostMapping(value = UrlConstant.Api.USER_REGISTER)
+    @ResponseBody
+    public APIResponse register(@RequestBody UserDomain userDomain) {
+        int result = userService.register(userDomain);
+        if(result == 1){
+            return APIResponse.success("注册成功");
+        }else {
+            return APIResponse.fail("注册失败");
+        }
+    }
+
 }

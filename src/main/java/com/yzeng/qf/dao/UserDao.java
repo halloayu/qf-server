@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @Mapper
 public interface UserDao {
@@ -27,6 +29,13 @@ public interface UserDao {
      * @return true or false
      */
     int updateUserInfo(UserDomain user);
+
+    /**
+     * 根据用户名查询用户
+     * @param username 用户名
+     * @return list
+     */
+    List<UserDomain> queryUserByName(@Param("username") String username);
 
     /**
      * 根据主键编号获取用户信息

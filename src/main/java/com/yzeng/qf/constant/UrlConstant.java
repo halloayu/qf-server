@@ -36,6 +36,8 @@ public interface UrlConstant {
         String SEARCH_PRODUCT = "api/product/search"; // 搜索商品
         String PRODUCT_DETAIL = "api/product/detail"; // 搜索商品
         String PRODUCT_PICTURE = "api/product/picture"; // 搜索商品
+        String USER_CHECK = "api/user/check"; // 检查用户名是否已存在
+        String USER_REGISTER = "api/user/register"; // 注册用户
 
     }
 }

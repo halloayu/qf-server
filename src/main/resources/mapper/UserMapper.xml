@@ -8,6 +8,21 @@
         user_id,username,password,nickname,gender,phone,email,level,role,create_time,status
     </sql>
 
+    <insert id="addUser" parameterType="com.yzeng.qf.pojo.model.UserDomain">
+        INSERT INTO
+        <include refid="BASE_TABLE"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            user_id,username,password,nickname,gender,phone,email,level,role,create_time,status
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{user_id, jdbcType=INTEGER},#{username, jdbcType=VARCHAR},
+            #{password, jdbcType=VARCHAR},#{nickname, jdbcType=VARCHAR},
+            #{gender, jdbcType=INTEGER}, #{phone, jdbcType=VARCHAR},
+            #{email, jdbcType=VARCHAR}, #{level, jdbcType=INTEGER},#{role, jdbcType=INTEGER},
+            #{create_time, jdbcType=VARCHAR},#{status ,jdbcType=INTEGER}
+        </trim>
+    </insert>
+
     <update id="updateUserInfo" parameterType="com.yzeng.qf.pojo.model.UserDomain">
         UPDATE
         <include refid="BASE_TABLE"/>
@@ -35,6 +50,14 @@
     </select>
 
     <select id="getUserInfoByName" resultType="com.yzeng.qf.pojo.model.UserDomain">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        WHERE username = #{username, jdbcType=VARCHAR}
+    </select>
+
+    <select id="queryUserByName" resultType="com.yzeng.qf.pojo.model.UserDomain">
         SELECT
         <include refid="BASE_COLUMN"/>
         FROM

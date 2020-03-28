@@ -23,12 +23,12 @@ class QfServerApplicationTests {
 
 	@Test
 	void contextLoads() {
-//		UserDomain user = userService.getUserInfoByName("qf2");
-//		System.out.println(user);
+		List<UserDomain> user = userService.queryUsers("qf2");
+		System.out.println(user);
 
-		List<PictureDomain> picture = pictureService.getPictureByProductId(13);
-		String pictureJson = JSON.toJSONString(picture);
-		System.out.println(pictureJson);
+//		List<PictureDomain> picture = pictureService.getPictureByProductId(13);
+//		String pictureJson = JSON.toJSONString(picture);
+//		System.out.println(pictureJson);
 	}
 
 }
