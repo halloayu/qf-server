@@ -38,6 +38,8 @@ public interface UrlConstant {
         String PRODUCT_PICTURE = "api/product/picture"; // 搜索商品
         String USER_CHECK = "api/user/check"; // 检查用户名是否已存在
         String USER_REGISTER = "api/user/register"; // 注册用户
+        String STORE_MODELS = "api/store/models"; // 获取店铺设计模型
+        String PICTURES = "api/id/pictures"; // 根据ID获取所有图片
 
     }
 }

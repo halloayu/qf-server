@@ -39,4 +39,11 @@ public interface ModelService {
      * @param model_id 设计稿ID
      */
     void resurgenceByModelId(Integer model_id);
+
+    /**
+     * 获取该店铺开放的所有店铺设计模型
+     * @param supplierId 店铺ID
+     * @return list
+     */
+    List<ModelDomain> getModelsBySupplier(String supplierId);
 }

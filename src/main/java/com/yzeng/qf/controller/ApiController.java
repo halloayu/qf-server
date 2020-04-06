@@ -51,6 +51,7 @@ public class ApiController {
     @ResponseBody
     public APIResponse saveModelData(@RequestBody ModelDomain model) {
         model.setCreate_time(DateKit.getNowTime()); // 插入当前时间
+        System.out.println(model);
         if (modelService.addModelByUserId(model) == 1) {
             return APIResponse.success("设计稿存储成功");
         } else {
@@ -189,6 +190,7 @@ public class ApiController {
         else
             return APIResponse.success("有效用户名");
     }
+
     @PostMapping(value = UrlConstant.Api.USER_REGISTER)
     @ResponseBody
     public APIResponse register(@RequestBody UserDomain userDomain) {
@@ -200,4 +202,15 @@ public class ApiController {
         }
     }
 
+    @GetMapping(value = UrlConstant.Api.STORE_MODELS)
+    @ResponseBody
+    public List<ModelDomain> getStoreModels(@RequestParam("supplier_id") String supplier_id) {
+        return modelService.getModelsBySupplier(supplier_id);
+    }
+
+    @GetMapping(value = UrlConstant.Api.PICTURES)
+    @ResponseBody
+    public List<PictureDomain> getPictures(@RequestParam("pictures") List<String> pictures) {
+        return pictureService.getAllPictures(pictures);
+    }
 }

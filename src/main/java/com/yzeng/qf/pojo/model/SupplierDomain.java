@@ -46,6 +46,10 @@ public class SupplierDomain {
      */
     private Integer month_sale;
     /**
+     * 是否开放店铺设计
+     */
+    private Integer is_design;
+    /**
      * 创建时间
      */
     private String create_time;
@@ -142,6 +146,14 @@ public class SupplierDomain {
         this.month_sale = month_sale;
     }
 
+    public Integer getIs_design() {
+        return is_design;
+    }
+
+    public void setIs_design(Integer is_design) {
+        this.is_design = is_design;
+    }
+
     public String getCreate_time() {
         return create_time;
     }
@@ -172,6 +184,7 @@ public class SupplierDomain {
                 ", supplier_address='" + supplier_address + '\'' +
                 ", supplier_evaluation=" + supplier_evaluation +
                 ", month_sale=" + month_sale +
+                ", is_design=" + is_design +
                 ", create_time='" + create_time + '\'' +
                 ", status=" + status +
                 '}';

@@ -6,7 +6,7 @@
     </sql>
     <sql id="BASE_COLUMN">
         supplier_id,supplier_code,supplier_name,supplier_type,supplier_contact,supplier_phone,bank_name,bank_account,
-        supplier_address,supplier_evaluation,month_sale,create_time,status
+        supplier_address,supplier_evaluation,month_sale,is_design,create_time,status
     </sql>
 
     <insert id="addSupplier" parameterType="com.yzeng.qf.pojo.model.SupplierDomain">
@@ -14,7 +14,7 @@
         <include refid="BASE_TABLE"/>
         <trim prefix="(" suffix=")" suffixOverrides=",">
             supplier_id,supplier_code,supplier_name,supplier_type,supplier_contact,supplier_phone,bank_name,bank_account,
-            supplier_address,supplier_evaluation,month_sale,create_time,status
+            supplier_address,supplier_evaluation,month_sale,is_design,create_time,status
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
 

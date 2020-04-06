@@ -162,6 +162,14 @@ public class ModelDomain {
      */
     private String signature;
     /**
+     * 参考价格
+     */
+    private String reference_price;
+    /**
+     * 参考定制时间
+     */
+    private String reference_delivery;
+    /**
      * 创建时间
      */
     private String create_time;
@@ -490,6 +498,22 @@ public class ModelDomain {
         this.signature = signature;
     }
 
+    public String getReference_price() {
+        return reference_price;
+    }
+
+    public void setReference_price(String reference_price) {
+        this.reference_price = reference_price;
+    }
+
+    public String getReference_delivery() {
+        return reference_delivery;
+    }
+
+    public void setReference_delivery(String reference_delivery) {
+        this.reference_delivery = reference_delivery;
+    }
+
     public String getCreate_time() {
         return create_time;
     }
@@ -549,6 +573,8 @@ public class ModelDomain {
                 ", img_f='" + img_f + '\'' +
                 ", img_b='" + img_b + '\'' +
                 ", signature='" + signature + '\'' +
+                ", reference_price='" + reference_price + '\'' +
+                ", reference_delivery='" + reference_delivery + '\'' +
                 ", create_time='" + create_time + '\'' +
                 ", status=" + status +
                 '}';

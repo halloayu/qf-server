@@ -36,4 +36,12 @@ public interface ModelDao {
      * @param model_id 设计稿ID
      */
     void updateStatusByModelId(@Param("model_id") Integer model_id, @Param("status") Integer status);
+
+    /**
+     * 根据模型所属和状态查表
+     * @param belong 模型属于哪个供应商
+     * @param status 状态值
+     * @return list
+     */
+    List<ModelDomain> queryModelByBelong(@Param("belong") String belong, @Param("status") Integer status);
 }

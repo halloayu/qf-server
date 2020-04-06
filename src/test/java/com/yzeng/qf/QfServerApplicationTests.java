@@ -1,6 +1,7 @@
 package com.yzeng.qf;
 
 import com.alibaba.fastjson.JSON;
+import com.yzeng.qf.dao.PictureDao;
 import com.yzeng.qf.pojo.model.PictureDomain;
 import com.yzeng.qf.pojo.model.UserDomain;
 import com.yzeng.qf.service.PictureService;
@@ -21,14 +22,20 @@ class QfServerApplicationTests {
 	@Autowired
 	PictureService pictureService;
 
+	@Autowired
+	PictureDao pictureDao;
+
 	@Test
 	void contextLoads() {
-		List<UserDomain> user = userService.queryUsers("qf2");
-		System.out.println(user);
+//		List<UserDomain> user = userService.queryUsers("qf2");
+//		System.out.println(user);
 
 //		List<PictureDomain> picture = pictureService.getPictureByProductId(13);
 //		String pictureJson = JSON.toJSONString(picture);
 //		System.out.println(pictureJson);
+
+		PictureDomain pictureDomain = pictureDao.getPictureById(92);
+		System.out.println(pictureDomain);
 	}
 
 }

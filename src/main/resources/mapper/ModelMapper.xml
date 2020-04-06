@@ -8,7 +8,7 @@
         model_id,model_name,user_id,belong,score,category,image_front,image_back,main_style,time_to_market,washing,material,printing_front,
         printing_back,thickness,clothing_technology,collar_type,model_type,suitable,season,size,placket,front_pant,pocket,
         color,sleeve_left_color,sleeve_right_color,trouser_left_color,trouser_right_color,filler,hem_style,cuff_style,sleeve,
-        outside_length,waist_style,trouser_hem,shell_fabric,img_f,img_b,signature,create_time,status
+        outside_length,waist_style,trouser_hem,shell_fabric,img_f,img_b,signature,reference_price,reference_delivery,create_time,status
     </sql>
 
     <insert id="addModelByUserId" parameterType="com.yzeng.qf.pojo.model.ModelDomain">
@@ -18,7 +18,7 @@
             model_id,model_name,user_id,belong,score,category,image_front,image_back,main_style,time_to_market,washing,material,printing_front,
             printing_back,thickness,clothing_technology,collar_type,model_type,suitable,season,size,placket,front_pant,pocket,
             color,sleeve_left_color,sleeve_right_color,trouser_left_color,trouser_right_color,filler,hem_style,cuff_style,sleeve,
-            outside_length,waist_style,trouser_hem,shell_fabric,img_f,img_b,signature,create_time,status
+            outside_length,waist_style,trouser_hem,shell_fabric,img_f,img_b,signature,reference_price,reference_delivery,create_time,status
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             #{model_id, jdbcType=INTEGER}, #{model_name, jdbcType=VARCHAR},#{user_id, jdbcType=INTEGER}, #{belong, jdbcType=VARCHAR},
@@ -37,7 +37,8 @@
             #{hem_style ,jdbcType=VARCHAR}, #{cuff_style ,jdbcType=VARCHAR}, #{sleeve ,jdbcType=VARCHAR},
             #{outside_length ,jdbcType=VARCHAR}, #{waist_style ,jdbcType=VARCHAR}, #{trouser_hem ,jdbcType=VARCHAR},
             #{shell_fabric ,jdbcType=VARCHAR}, #{img_f ,jdbcType=VARCHAR}, #{img_b ,jdbcType=VARCHAR},
-            #{signature ,jdbcType=VARCHAR}, #{create_time ,jdbcType=VARCHAR}, #{status ,jdbcType=INTEGER},
+            #{signature ,jdbcType=VARCHAR},#{reference_price ,jdbcType=VARCHAR},#{reference_delivery ,jdbcType=VARCHAR},
+            #{create_time ,jdbcType=VARCHAR}, #{status ,jdbcType=INTEGER},
         </trim>
     </insert>
 
@@ -66,5 +67,14 @@
         SET status = #{status, jdbcType=INTEGER}
         WHERE model_id = #{model_id, jdbcType=INTEGER}
     </update>
+
+    <select id="queryModelByBelong" resultType="com.yzeng.qf.pojo.model.ModelDomain">
+        SELECT
+        <include refid="BASE_COLUMN"/>
+        FROM
+        <include refid="BASE_TABLE"/>
+        WHERE
+        belong = #{belong, jdbcType=VARCHAR} and status = #{status, jdbcType=INTEGER}
+    </select>
 
 </mapper>

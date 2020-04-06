@@ -10,6 +10,10 @@ import java.util.List;
 @Repository
 @Mapper
 public interface PictureDao {
+
+    // 通过ID获取图片
+    PictureDomain getPictureById(@Param("picture_id") Integer picture_id);
+
     // 通过用户ID查询图片
     List<PictureDomain> queryPictureByUserId(@Param("user_id") Integer user_id);
 

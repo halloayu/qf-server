@@ -7,6 +7,14 @@ import java.util.List;
 
 @Service
 public interface PictureService {
+
+    /**
+     * 获取list里所有图片ID指向的具体图片数据
+     * @param list 图片ID列表
+     * @return list
+     */
+    List<PictureDomain> getAllPictures(List<String> list);
+
     /**
      *  根据 产品ID 获取相应图片
      * @param product_id 产品ID

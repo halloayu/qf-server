@@ -53,4 +53,9 @@ public class ModelServiceImpl implements ModelService {
         modelDao.updateStatusByModelId(model_id, 1); // 状态为1有效
     }
 
+    @Override
+    public List<ModelDomain> getModelsBySupplier(String supplierId) {
+        return modelDao.queryModelByBelong(supplierId, 2);
+    }
+
 }
